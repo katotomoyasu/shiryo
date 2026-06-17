@@ -1,0 +1,6 @@
+# Claude Code ローカルセッションデータ
+**/.claude/
+
+# Office 一時ファイル
+~$*
+*.tmp
