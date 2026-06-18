@@ -220,18 +220,18 @@ const doc = new Document({
           ]}),
           new TableRow({ children: [
             dCell("第2期（半年）", 1400, true),
-            dCell("掘り下げ", 2200, true),
+            dCell("掘り下げ・発展", 2200, true),
             dCell("前期の提言を受け、「スティグマを減らす映像表現」をテーマにアニメーション制作・上映", 5426, true)
           ]}),
           new TableRow({ children: [
-            dCell("第3期（半年）", 1400, false),
-            dCell("実践・展開", 2200, false),
-            dCell("映像を使った出前授業を設計・実施。高校生向けパーキンソン病啓発プログラムとして展開", 5426, false)
+            dCell("とりまとめ（約1年）", 1400, false),
+            dCell("てんびんが統合・整理", 2200, false),
+            dCell("てんびんが2期分の成果を整理・編集し、WPC2029の発表コンテンツを仕上げる", 5426, false)
           ]}),
           new TableRow({ children: [
             dCell("WPC2029", 1400, true),
-            dCell("てんびんが統合・発信", 2200, true),
-            dCell("3期分の成果をてんびんが整理し、「日本の学生×PD」として国際学会で発表", 5426, true)
+            dCell("世界へ発信", 2200, true),
+            dCell("「日本の学生×パーキンソン病」として国際学会で発表。次の世代へ引き継ぐ", 5426, true)
           ]}),
         ]
       }),
@@ -271,7 +271,7 @@ const doc = new Document({
   }]
 });
 
-const outputPath = "C:/Users/KATOTO/Downloads/資料作成/shiryo/10bin/20260618_10bin_WPC2029学生企画_企画書_v2.docx";
+const outputPath = "C:/Users/KATOTO/Downloads/資料作成/shiryo/10bin/20260618_10bin_WPC2029学生企画_企画書_v3.docx";
 Packer.toBuffer(doc).then(buffer => {
   fs.writeFileSync(outputPath, buffer);
   console.log("保存完了: " + outputPath);

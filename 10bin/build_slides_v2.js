@@ -158,7 +158,7 @@ async function buildDeck() {
     const blocks = [
       { label: "第1期\n（半年）", color: C.blue4, textC: C.bgNavy },
       { label: "第2期\n（半年）", color: C.blue3, textC: C.bgNavy },
-      { label: "第3期\n（半年）", color: C.blue2, textC: C.textWhite },
+      { label: "とりまとめ\n（1年）", color: C.blue2, textC: C.textWhite },
       { label: "WPC2029\n（てんびん）", color: C.royalBlue, textC: C.textWhite },
     ];
 
@@ -176,7 +176,7 @@ async function buildDeck() {
     });
 
     // 「国内発表」ラベル
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 2; i++) {
       const bx = startX + i * (bw + gap);
       s.addText("↓ 国内発表", { x: bx, y: by + bh + 0.05, w: bw, h: 0.32, fontFace: "Yu Gothic", fontSize: 10, bold: true, color: C.blue2, align: "center", valign: "top", margin: 0 });
     }
@@ -292,10 +292,10 @@ async function buildDeck() {
         body: "「スティグマと\n学生にできること」\n調査・提言発表（例）" },
       { label: "第2期", sub: "掘り下げ",     color: C.blue3, textC: C.bgNavy,
         body: "前期の提言を受け\n映像表現に発展\nアニメーション制作（例）" },
-      { label: "第3期", sub: "実践・展開",   color: C.blue2, textC: C.textWhite,
-        body: "映像を使った\n出前授業を設計・実施\n啓発プログラムへ（例）" },
-      { label: "WPC2029", sub: "てんびんが統合", color: C.royalBlue, textC: C.textWhite,
-        body: "3期分の成果を\nてんびんが整理し\n国際学会で発表" },
+      { label: "とりまとめ", sub: "てんびんが整理",   color: C.blue2, textC: C.textWhite,
+        body: "2期分の成果を\nてんびんが編集・整理\nWPC2029発表へ準備" },
+      { label: "WPC2029", sub: "世界へ発信", color: C.royalBlue, textC: C.textWhite,
+        body: "「日本の学生×PD」\nとして国際学会で発表\n次の世代へ引き継ぐ" },
     ];
 
     const bw = 1.95, bh = 2.8, by = L.contentY, gap = 0.15;
@@ -343,10 +343,10 @@ async function buildDeck() {
 
     // 各年の内容
     const yearContent = [
-      { items: ["第1期スタート（前半）", "第1期 国内発表（後半）", "第2期スタート"] },
-      { items: ["第2期 国内発表", "第3期スタート", "第3期 国内発表"] },
-      { items: ["第4期スタート", "第4期 国内発表", "WPC2029 発表準備"] },
-      { items: ["WPC2029 開催", "てんびんが全期\nの成果を統合発表", ""] },
+      { items: ["参加チーム募集・準備", "第1期スタート（後半）", ""] },
+      { items: ["第1期 国内発表（前半）", "第2期スタート（後半）", "第2期 国内発表"] },
+      { items: ["てんびんとりまとめ開始", "WPC2029 発表準備", ""] },
+      { items: ["WPC2029 開催", "てんびんが成果を\n統合発表", ""] },
     ];
     yearContent.forEach((yc, i) => {
       const yx = L.contentX + i * (yw + yg);
@@ -398,7 +398,7 @@ async function buildDeck() {
     });
   }
 
-  const out = "C:/Users/KATOTO/Downloads/資料作成/shiryo/10bin/20260618_10bin_WPC2029学生企画_発表資料_v2.pptx";
+  const out = "C:/Users/KATOTO/Downloads/資料作成/shiryo/10bin/20260618_10bin_WPC2029学生企画_発表資料_v3.pptx";
   await pres.writeFile({ fileName: out });
   console.log("保存完了: " + out);
 }
