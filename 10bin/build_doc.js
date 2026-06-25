@@ -2,6 +2,7 @@ const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
         AlignmentType, BorderStyle, WidthType, ShadingType,
         LevelFormat, Header, Footer, PageNumber } = require('docx');
 const fs = require('fs');
+const path = require('path');
 
 const ACCENT    = "2E5FA3";
 const WHITE     = "FFFFFF";
@@ -271,7 +272,7 @@ const doc = new Document({
   }]
 });
 
-const outputPath = "C:/Users/KATOTO/Downloads/資料作成/shiryo/10bin/20260618_10bin_WPC2029学生企画_企画書_v3.docx";
+const outputPath = path.join(__dirname, "20260618_10bin_WPC2029学生企画_企画書_v3.docx");
 Packer.toBuffer(doc).then(buffer => {
   fs.writeFileSync(outputPath, buffer);
   console.log("保存完了: " + outputPath);

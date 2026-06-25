@@ -1,4 +1,5 @@
 const pptxgen = require("pptxgenjs");
+const path = require("path");
 
 const C = {
   bgWhite:   "FFFFFF",
@@ -398,7 +399,7 @@ async function buildDeck() {
     });
   }
 
-  const out = "C:/Users/KATOTO/Downloads/資料作成/shiryo/10bin/20260618_10bin_WPC2029学生企画_発表資料_v3.pptx";
+  const out = path.join(__dirname, "20260618_10bin_WPC2029学生企画_発表資料_v3.pptx");
   await pres.writeFile({ fileName: out });
   console.log("保存完了: " + out);
 }

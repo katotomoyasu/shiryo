@@ -1,4 +1,5 @@
 const pptxgen = require("pptxgenjs");
+const path = require("path");
 
 // === カラーパレット ===
 const C = {
@@ -623,7 +624,7 @@ async function buildDeck() {
     });
   }
 
-  const outputPath = "C:/Users/KATOTO/Downloads/資料作成/shiryo/10bin/20260618_10bin_WPC2029学生企画書_v1.pptx";
+  const outputPath = path.join(__dirname, "20260618_10bin_WPC2029学生企画書_v1.pptx");
   await pres.writeFile({ fileName: outputPath });
   console.log("保存完了: " + outputPath);
 }
