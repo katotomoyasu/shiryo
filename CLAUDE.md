@@ -17,3 +17,30 @@
 
 ## スキル・設定の共有
 新しいPCでセットアップする場合は `claude-config/setup.bat` を実行すること。
+
+## 完了済みフォルダのローカル除外（sparse-checkout）
+古い・完了済みのテーマフォルダ（例: 001〜008）をローカルの作業フォルダから非表示にしたい場合は、
+`git sparse-checkout` を使う。GitHub側の履歴・データは一切変更されず、このパソコンの表示だけが変わる。
+
+- 前提: `git status` で作業ツリーがクリーンであることを確認してから実行する。
+- 除外する（表示するフォルダだけを列挙する。cone modeなのでルート直下のファイルは自動的に含まれる）:
+  ```
+  git sparse-checkout init --cone
+  git sparse-checkout set "009 SCS評価について" "10bin" "claude-config"
+  ```
+- 現在の設定を確認する:
+  ```
+  git sparse-checkout list
+  ```
+- 特定のフォルダをローカルに復元する（追加表示）:
+  ```
+  git sparse-checkout add "001 東海販売士協会_請求書"
+  ```
+- 全フォルダを元通り表示する（sparse-checkoutを解除する）:
+  ```
+  git sparse-checkout disable
+  ```
+
+注意点:
+- 設定はこのパソコンのgitローカル設定のみに保存される。GitHub上のデータやほかの端末には影響しない。
+- 実行前に対象フォルダ内のファイルを開いているアプリ（Excel等）があると、ロックファイルの警告が出ることがあるが、データは壊れない。閉じてから実行するのが望ましい。
